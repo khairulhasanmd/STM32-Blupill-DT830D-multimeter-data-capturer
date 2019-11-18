@@ -1,3 +1,8 @@
+/* STM32F103C8T6 Bluepill based
+ DT830D Multimeter USB-serial data capturer.
+Author : Md. Khairul Hasan
+*/
+
 int i, d1=0, d2=0, d3=0, d4=0, dot1=0, dot2=0;
 float num=0;
 int segment_decimal_equivalent[10] = {95,  6, 109, 47,  54,  59,  123, 14,  127, 63};//0123456789 according to excel sheet
@@ -46,8 +51,6 @@ void setup()
 }
 
 void loop()          {  
-  //Serial.print(num);
-  //Serial.println(num);
   delay(50);
 }
 
@@ -84,13 +87,6 @@ void isr() {
     num = num/100;
   }
   Serial.println(num);
-  // Serial.print(digitalRead(PC14));
-  // Serial.print(digitalRead(PB5));
-  // Serial.print(digitalRead(PB12));
-  // Serial.print(digitalRead(PB4));
-  // Serial.print(digitalRead(PB13));
-  // Serial.print(digitalRead(PB14));
-  // Serial.println(digitalRead(PB3));
 }
 
 int segment_to_number(int number)
